@@ -7,7 +7,7 @@ module.exports = {
 
 	WARMUP_COUNTDOWN: 100,
 	RESOURCE_CLOUD: "http://p22smlnnf.bkt.clouddn.com",
-	MUSIC_CLOUD: "http://120.24.96.140/music",
+	MUSIC_CLOUD: "http://p24jr268p.bkt.clouddn.com",
 
 	AWS_DYNAMODB_REGION: "ap_northeast_1",
 	AWS_COGNITO_IDENTITY_POOL_ID: "ap-northeast-1_iNKGIoFVd",

@@ -17,7 +17,7 @@ class Home extends Component {
 	gotoGym = () => {
 		ScreenOrientation.allow(ScreenOrientation.Orientation.ALL);
 		this.props.dispatch(
-			NavigationActions.navigate({ routeName: "Save" })
+			NavigationActions.navigate({ routeName: "Gym" })
 		);
 		this.props.dispatch(createAction("gym/start")());
 	};
