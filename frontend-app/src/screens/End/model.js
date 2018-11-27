@@ -1,8 +1,7 @@
 import { createAction, NavigationActions, Storage } from "../../utils";
+import { ScreenOrientation } from "expo";
 
-import { ScreenOrientation } from 'expo';
-
-const config = require('../../config');
+const config = require("../../config");
 
 /*
 	dots = []
@@ -19,20 +18,17 @@ const config = require('../../config');
 */
 
 export default {
-	namespace: "end",
-	state: {
-	},
-	effects: {
-		
-	},
-	subscriptions: {
-		setup({ dispatch }) {
-			console.log("end.")
-		}
-	},
-	reducers: {
-		updateState(state, { payload }) {
-			return { ...state, ...payload };
-		}
-	},
-}
+  namespace: "end",
+  state: {},
+  effects: {},
+  subscriptions: {
+    setup({ dispatch }) {
+      console.log("end.");
+    }
+  },
+  reducers: {
+    updateState(state, { payload }) {
+      return { ...state, ...payload };
+    }
+  }
+};

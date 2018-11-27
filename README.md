@@ -11,7 +11,7 @@ live-server .
 
 ### Design Principles
 
-```
+```plantuml
 @startuml
 left to right direction
 skinparam packageStyle rectangle 
@@ -40,7 +40,7 @@ BetterMe ....> Me : stronger body and brain\n larger probability to live longer\
 ```
 
 ### Use Cases
-```
+```plantuml
 @startuml
 :User: as USER
 
@@ -82,7 +82,7 @@ USER --> (Landing)
 ### Page Flow
 
 # Component Diagram
-```
+```plantuml
 @startuml
 
 interface IT
@@ -176,7 +176,7 @@ WEB --> API_GATEWAY #blue
 ```
 
 # DB Schema
-```
+```plantuml
 @startuml
 class Accounts {
 	id

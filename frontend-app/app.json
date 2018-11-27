@@ -1,19 +1,26 @@
 {
-	"expo": {
-		"name": "Gym",
-		"icon": "./app-icon.png",
-		"version": "1.0.0",
-		"slug": "gym",
-		"sdkVersion": "24.0.0",
-		"ios": {
-			"bundleIdentifier": "store.hlhs.app.gym"
-		},
-		"android": {
-			"package": "store.hlhs.app.gym"
-		},
-		"assetBundlePatterns": [  
-	    	"assets/**",
-	    	"node_modules/react-navigation/src/**/*.png"
-	    ]
-	}
+    "expo": {
+        "name": "gym",
+        "version": "1.0.0",
+        "slug": "gym",
+        "sdkVersion": "31.0.0",
+        "platforms": ["ios", "android"],
+        "orientation": "portrait",
+        "icon": "./assets/icon.png",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": [
+            "assets/**",
+            "node_modules/react-navigation/src/**/*.png"
+        ],
+        "ios": {
+            "supportsTablet": true
+        }
+    }
 }
