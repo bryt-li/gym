@@ -2,7 +2,7 @@ import { createAction, Storage } from '../../utils'
 import NavigationService from '../../services/NavigationService'
 
 const config = require('../../config')
-const { MUSIC_CLOUD, MUSIC_NUM } = config
+const { MUSIC, MUSIC_NUM } = config
 
 import scripts from './core_scripts'
 let TOTAL = scripts.length
@@ -19,8 +19,7 @@ let timer = null
 async function playMusic() {
     try {
         let index = Math.ceil(Math.random() * MUSIC_NUM)
-        let url = `${MUSIC_CLOUD}/${index}.mp3`
-        await soundObject.loadAsync({ uri: url })
+        await soundObject.loadAsync(MUSIC[index])
         await soundObject.playAsync()
     } catch (error) {
         console.log(error)
@@ -31,6 +30,21 @@ async function stopMusic() {
     try {
         await soundObject.stopAsync()
         await soundObject.unloadAsync()
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function pauseMusic() {
+    try {
+        await soundObject.pauseAsync()
+    } catch (error) {
+        console.log(error)
+    }
+}
+async function resumeMusic() {
+    try {
+        await soundObject.playAsync()
     } catch (error) {
         console.log(error)
     }
@@ -52,7 +66,17 @@ export default {
             let current = 0
             yield put(createAction('updateState')({ isRunning, current }))
         },
-
+        *pauseToggle(action, { call, put, select }) {
+            const { isRunning } = yield select(state => state.gym)
+            if (isRunning) {
+                console.log('pause')
+                yield call(pauseMusic)
+            } else {
+                console.log('resume')
+                yield call(resumeMusic)
+            }
+            yield put(createAction('toggleRunning')(null))
+        },
         *tick(action, { call, put, select }) {
             const { isRunning, current } = yield select(state => state.gym)
             if (!isRunning) return
@@ -116,6 +140,9 @@ export default {
     reducers: {
         updateState(state, { payload }) {
             return { ...state, ...payload }
+        },
+        toggleRunning(state, { payload }) {
+            return { ...state, isRunning: !state.isRunning }
         },
     },
 }

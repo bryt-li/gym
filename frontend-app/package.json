@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "dva-core": "^1.4.0",
-    "expo": "^31.0.2",
-    "react": "16.5.0",
-    "react-dom": "^16.6.3",
+    "expo": "^31.0.6",
+    "react": "^16.5.0",
+    "react-dom": "^16.8.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-calendars": "^1.21.0",
     "react-navigation": "^2.18.2",

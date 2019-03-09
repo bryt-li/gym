@@ -1,4 +1,6 @@
 node_modules/**/*
+assets/music/**/*
+
 .expo/*
 npm-debug.*
 *.jks

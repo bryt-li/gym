@@ -66,6 +66,19 @@ let actions = [
     },
 ]
 
+const ASSETS_BLANK_PNG = require('../../../assets/blank.png')
+const ASSETS = [
+    require('../../../assets/core/1.gif'),
+    require('../../../assets/core/2.gif'),
+    require('../../../assets/core/3.gif'),
+    require('../../../assets/core/4.gif'),
+    require('../../../assets/core/5.gif'),
+    require('../../../assets/core/6.gif'),
+    require('../../../assets/core/7.gif'),
+    require('../../../assets/core/8.gif'),
+    require('../../../assets/core/9.gif'),
+]
+
 function createScripts() {
     var scripts = []
     for (var set = 1; set <= totalSets; set++) {
@@ -81,7 +94,7 @@ function createScripts() {
 
                 if (second == 0) {
                     script.setTitle = 'Get Ready'
-                    script.setImage = `${RESOURCE_CLOUD}/core/${index + 1}.gif`
+                    script.setImage = ASSETS[index]
                     script.say = 'get ready for ' + actions[index].name
                 }
 
@@ -127,7 +140,7 @@ function createScripts() {
 
                 if (second == 0) {
                     script.stopMusic = true
-                    script.setImage = `${RESOURCE_CLOUD}/blank.png`
+                    script.setImage = ASSETS_BLANK_PNG
                     script.setTitle = 'Rest'
 
                     if (index < actions.length - 1) {
@@ -146,7 +159,7 @@ function createScripts() {
     var script = {}
     script.say = 'Congratulations. Well done.'
     script.stopMusic = true
-    script.setImage = `${RESOURCE_CLOUD}/blank.png`
+    script.setImage = ASSETS_BLANK_PNG
     scripts.push(script)
 
     return scripts
